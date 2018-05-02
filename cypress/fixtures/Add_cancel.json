@@ -1,0 +1,55 @@
+{
+	"users":[
+	{
+		"email": "quanly_1@gmail.com",
+		"password" : "12345678",
+		"testcases":[
+			{
+				"casename":"Add_cancel_001",
+				"path" : "/main/admin/administrators",
+				"modal":"showCreateAdminModal()",
+				"pos":"last",
+				"inputs": [
+					{"type":"text", "selector":"user.email", "value":"cancel@gmail.com", "index" : 3},
+					{"type":"text", "selector":"user.password", "value":"a@123456"},
+					{"type":"text", "selector":"user.first_name", "value":"Nguyễn"},
+					{"type":"text", "selector":"user.last_name", "value":"Nam"},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên"},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"Cơ sở điều trị MMT Đồng Hỷ"}
+					
+				]
+			},
+			{
+				"casename":"Add_cancel_002",
+				"path" : "/main/admin/admin_provinces",
+				"modal":"showCreateAdminModal()",
+				"pos":"last",
+				"inputs" : [
+					{"type":"text", "selector":"user.email" , "value": "cancel@gmail.com", "index" : 3},
+					{"type":"text", "selector":"user.password" , "value": "a@123456"},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn"},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam"},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên"},
+					{"type":"text", "selector":"user.unit_name" , "value": "Đơn vị 1"}
+				]
+			},
+			{
+				"casename":"Add_cancel_003",
+				"path" : "/main/admin/administrators/issuing_agency",
+				"modal":"showCreateIssuingAgencyModal()",
+				"pos":"first",
+				"inputs" : [
+					{"type":"text", "selector":"issuing_agency.name" , "value": "CSĐT Từ Liêm cancel", "index" : 3},
+					{"type":"select", "selector":"issuing_agency.province_id", "value" : "Hà Nội"},
+					{"type":"select", "selector":"issuing_agency.district_id", "value" : "Bắc Từ Liêm"},
+					{"type":"select", "selector":"issuing_agency.ward_id", "value":"Minh Khai"}
+				]
+			}
+		]
+	},
+	{
+		"email":"",
+		"password":"",
+		"testcases":[]
+	}
+]}

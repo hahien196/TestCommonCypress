@@ -1,0 +1,40 @@
+{
+	"users": [{
+		"email": "quanly_1@gmail.com",
+		"password": "12345678",
+		"urls": [{
+			"path": "/main/admin/administrators",
+			"modal": "showDeleteAdminModal(administrator)",
+			"testcases": 
+			{
+				"casename": "Delete_cancel_001",
+				"pos": "1",
+				"index":3
+			}
+		},
+		{
+			"path": "/main/admin/admin_provinces",
+			"modal": "showDeleteAdminModal(admin_province)",
+			"testcases": {
+				"casename": "Delete_cancel_002",
+				"pos": "1",
+				"index":3
+			}
+		},
+		{
+			"path": "/main/admin/administrators/issuing_agency",
+			"modal": "showDeleteIssuingAgencyModal(issuing_agency)",
+			"testcases": {
+				"casename": "Delete_cancel_003",
+				"pos": "1",
+				"index":2
+			}
+		}]
+	},
+	{
+			"email": "",
+			"password": "",
+			"urls": []
+		}
+	]
+}

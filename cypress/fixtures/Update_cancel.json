@@ -1,0 +1,66 @@
+{
+	"users":[
+	{
+		"email": "quanly_1@gmail.com",
+		"password" : "12345678",
+		"urls":[
+		{	
+			"path" : "/main/admin/administrators",
+			"modal":"showUpdateAdminModal(administrator.id)",
+			"pos":"1",
+			"testcases":{
+				"casename":"Update_cancel_001",
+				"inputs": [
+					{"type":"text", "selector":"user.email", "value" : "truongcoso@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value" : "", "index" :"" },
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 1},
+					{"type":"text", "selector":"user.last_name", "value" : "Trịnh", "index" : 1},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 5},
+					{"type":"select", "selector":"user.issuing_agency_id", "value" : "CSĐT Viettel", "index" : 4},
+					{"type":"select", "selector":"user.is_active", "value" : "Hoạt động", "index" : 7}
+				]
+			}
+		},
+		{
+			"path":"/main/admin/admin_provinces",
+			"modal":"showUpdateAdminModal(admin_province.id)",
+			"pos":"1",
+			"testcases":{
+				"casename":"Update_cancel_002",
+				"inputs" : [
+					{"type":"text", "selector":"user.email", "value" : "abc@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value" : "", "index" : ""},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 1},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 1},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 4},
+					{"type":"select", "selector":"user.unit_name", "value" : "Đơn vị 1", "index" : 5},
+					{"type":"select", "selector":"user.is_active", "value" : "Hoạt động", "index" : 6}
+				]
+			}
+			
+		},
+		{
+			"path" : "/main/admin/administrators/issuing_agency",
+			"modal":"showEditIssuingAgencyModal(issuing_agency.id)",
+			"pos":"1",
+			"testcases":{
+				"casename":"Update_cancel_003",
+				"inputs" : [
+					{"type":"text", "selector":"user.email", "value" : "abc@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value" : "", "index" : ""},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 1},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 1},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 4},
+					{"type":"select", "selector":"user.unit_name", "value" : "Đơn vị 1", "index" : 5},
+					{"type":"select", "selector":"user.is_active", "value" : "Hoạt động", "index" : 6}
+				]
+			}
+			
+		}]
+	},
+	{
+		"email":"",
+		"password":"",
+		"urls":[]
+	}]
+}

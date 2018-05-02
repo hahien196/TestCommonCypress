@@ -1,0 +1,129 @@
+{
+	"users": [
+	{
+		"email": "quanly_1@gmail.com",
+		"password": "12345678",
+		"urls": [{
+			"path": "/main/admin/administrators",
+			"modal": "showDeleteAdminModal(administrator)",
+			"after":{
+				"modal":"showUpdateAdminModal(administrator.id)",
+				"status_selector":"user.is_active"},
+			"testcases": [
+			{
+				"casename": "Delete_change_status_001",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Bạn chắc chắn muốn xóa",
+					"index":2,
+					"check":0
+				}
+			},
+			{
+				"casename": "Delete_change_status_002",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Xóa tài khoản thành công",
+					"index":"",
+					"check":0
+				}
+			},
+			{
+				"casename": "Delete_change_status_003",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Tạm dừng",
+					"index":8,
+					"check":1
+				}
+			},
+			{
+				"casename": "Delete_change_status_004",
+				"pos": "0",
+				"assert": {
+					"type": "contain",
+					"data": "Tạm dừng",
+					"index":8,
+					"check":1
+		}
+			},
+			{
+				"casename": "Delete_change_status_005",
+				"pos": "4",
+				"assert": {
+					"type": "contain",
+					"data": "Tạm dừng",
+					"index":8,
+					"check":1
+				}
+			}]
+		},
+		{
+			"path": "/main/admin/admin_provinces",
+			"modal": "showDeleteAdminModal(admin_province)",
+			"after":{
+				"modal":"showUpdateAdminModal(admin_province.id)",
+				"status_selector":"user.is_active"},
+			"testcases": [{
+					"casename": "Delete_change_status_006",
+					"pos": "1",
+					"assert": {
+						"type": "contain",
+						"data": "Bạn chắc chắn muốn xóa",
+						"index":2,
+						"check":0
+					}
+				},
+				{
+					"casename": "Delete_change_status_007",
+					"pos": "1",
+					"assert": {
+						"type": "contain",
+						"data": "Xóa tài khoản thành công",
+						"index":"",
+						"check":0
+					}
+				},
+				{
+					"casename": "Delete_change_status_008",
+					"pos": "1",
+					"assert": {
+						"type": "contain",
+						"data": "Tạm dừng",
+						"index":7,
+						"check":1
+					}
+				},
+				{
+					"casename": "Delete_change_status_009",
+					"pos": "0",
+					"assert": {
+						"type": "contain",
+						"data": "Tạm dừng",
+						"index":7,
+						"check":1
+					}
+				},
+				{
+					"casename": "Delete_change_status_010",
+					"pos": "4",
+					"assert": {
+						"type": "contain",
+						"data": "Tạm dừng",
+						"index":7,
+						"check":1
+					}
+				}
+			]
+		}]
+	},
+	{
+		"email": "",
+		"password": "",
+		"urls": []
+	}
+	]
+}

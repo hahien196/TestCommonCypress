@@ -1,0 +1,78 @@
+{
+	"users": [
+	{
+		"email": "quanly_1@gmail.com",
+		"password": "12345678",
+		"urls": [{
+			"path": "/main/admin/administrators/issuing_agency",
+			"modal": "showDeleteIssuingAgencyModal(issuing_agency)",
+			"testcases": [
+			{
+				"casename": "Delete_success_001",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Bạn chắc chắn muốn xóa",
+					"index":3,
+					"check":0
+				}
+			},
+			{
+				"casename": "Delete_success_002",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Xóa thành công",
+					"index":"",
+					"check":0
+				}
+			},
+			{
+				"casename": "Delete_success_003",
+				"pos": "1",
+				"assert": {
+					"type": "not.contain",
+					"data": "",
+					"index":2,
+					"check":1	
+				}
+			},
+			{
+				"casename": "Delete_success_004",
+				"pos": "1",
+				"assert": {
+					"type": "not.contain",
+					"data": "",
+					"index":2,
+					"check":1
+				}
+			},
+			{
+				"casename": "Delete_success_005",
+				"pos": "8",
+				"assert": {
+					"type": "contain",
+					"data": "Không thể xóa do đơn vị này hiện có người dùng hoặc bệnh nhân",
+					"index":4,
+					"check":0	
+				}
+			},
+			{
+				"casename": "Delete_success_006",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "21510",
+					"index":2,
+					"check":1	
+				}
+			}
+			]
+		}]
+	},
+	{
+		"email": "",
+		"password": "",
+		"urls": []
+	}]
+}

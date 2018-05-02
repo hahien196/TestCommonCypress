@@ -1,0 +1,177 @@
+{
+	"users": [
+	{
+		"email": "quanly_1@gmail.com",
+		"password" : "12345678",
+		"urls" :[
+		{
+			"path" : "/main/admin/administrators",
+			"delete": "showDeleteAdminModal(administrator)",
+			"modal":"showCreateAdminModal()",
+			"pos":"last",
+			
+			"testcases":[
+				{"casename":"Add_success_001",
+				"inputs":[
+					{"type":"text", "selector":"user.email", "value":"a@gmail.com", "index" : ""},
+					{"type":"text", "selector":"user.password", "value":"a@123456","index" : ""},
+					{"type":"text", "selector":"user.first_name", "value":"Tô", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value":"Lý", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 6},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"Cơ sở điều trị MMT Đồng Hỷ", "index" : 5}
+					
+				],
+				 "assert":{
+					"type":"contain",
+					"data":"input.value",
+					"check":"0"}
+				},
+				{"casename":"Add_success_002",
+				"inputs":[
+					{"type":"text", "selector":"user.email", "value":"s0x3s5@gmail.com", "index" : ""},
+					{"type":"text", "selector":"user.password", "value":"a@123456","index" : ""},
+					{"type":"text", "selector":"user.first_name", "value":"Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value":"Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 6},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"Cơ sở điều trị MMT Đồng Hỷ", "index" : 5}
+					
+				],
+				 "assert":{
+					"type":"contain",
+					"data":"Tạo mới người dùng thành công",
+					"check":"0"}
+				},
+				
+				{"casename":"Add_success_003",
+				"inputs":[
+					{"type":"text", "selector":"user.email", "value":"ca03x5r@gmail.com", "index" : ""},
+					{"type":"text", "selector":"user.password", "value":"a@123456", "index":""},
+					{"type":"text", "selector":"user.first_name", "value":"Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value":"Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 6},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"Cơ sở điều trị MMT Đồng Hỷ", "index" : 5}
+					
+				],
+				 "assert":{
+					"type":"contain",
+					"data":"Tạo mới người dùng thành công",
+					"check":"1"}
+				}			
+			]
+			
+		},
+		{
+			"path" : "/main/admin/admin_provinces",
+			"delete":"showDeleteAdminModal(admin_province)",
+			"modal":"showCreateAdminModal()",
+			"pos":"last",
+			
+			"testcases":[
+				{"casename":"Add_success_004",
+				"inputs" : [
+					{"type":"text", "selector":"user.email" , "value": "aslos3x051@gmail.com", "index" : 3},
+					{"type":"text", "selector":"user.password" , "value": "a@123456"},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 5},
+					{"type":"text", "selector":"user.unit_name" , "value": "Đơn vị 1", "index" : 6}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"input.value",
+					"check":"0"
+				}
+				},
+				{"casename":"Add_success_005",
+				"inputs" : [
+					{"type":"text", "selector":"user.email" , "value": "a0ld5d@gmail.com", "index" : 3},
+					{"type":"text", "selector":"user.password" , "value": "a@123456"},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 5},
+					{"type":"text", "selector":"user.unit_name" , "value": "Đơn vị 1", "index" : 6}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"Tạo mới người dùng thành công",
+					"check":"0"
+				}
+				},
+				
+				{"casename":"Add_success_006",
+				"inputs" : [
+					{"type":"text", "selector":"user.email" , "value": "assl5m@gmail.com", "index" : 3},
+					{"type":"text", "selector":"user.password" , "value": "a@123456"},
+					{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 5},
+					{"type":"text", "selector":"user.unit_name" , "value": "Đơn vị 1", "index" : 6}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"Tạo mới người dùng thành công",
+					"check":"1"
+				}
+				}			
+			]
+			
+		},
+		{
+			"path" : "/main/admin/administrators/issuing_agency",
+			"delete":"showDeleteIssuingAgencyModal(issuing_agency)",
+			"modal":"showCreateIssuingAgencyModal()",
+			"pos":"first",
+			
+			"testcases":[
+				{"casename":"Add_success_007",
+				"inputs" : [
+					{"type":"text", "selector":"issuing_agency.name" , "value": "CSĐT Từ Liêm 1", "index" : 3},
+					{"type":"select", "selector":"issuing_agency.province_id", "value" : "Hà Nội", "index" : 7},
+					{"type":"select", "selector":"issuing_agency.district_id", "value" : "Bắc Từ Liêm", "index" : 8},
+					{"type":"select", "selector":"issuing_agency.ward_id", "value":"Minh Khai", "index" : 9}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"input.value",
+					"check":"0"
+				}
+				},
+				{"casename":"Add_success_008",
+				"inputs" : [
+					{"type":"text", "selector":"issuing_agency.name" , "value": "CSĐT Từ Liêm 2", "index" : 3},
+					{"type":"select", "selector":"issuing_agency.province_id", "value" : "Hà Nội", "index" : 7},
+					{"type":"select", "selector":"issuing_agency.district_id", "value" : "Bắc Từ Liêm", "index" : 8},
+					{"type":"select", "selector":"issuing_agency.ward_id", "value":"Minh Khai", "index" : 9}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"Tạo mới thành công",
+					"check":"0"
+				}
+				},
+				
+				{"casename":"Add_success_009",
+				"inputs" : [
+					{"type":"text", "selector":"issuing_agency.name" , "value": "CSĐT Từ Liêm 3", "index" : 3},
+					{"type":"select", "selector":"issuing_agency.province_id", "value" : "Hà Nội", "index" : 7},
+					{"type":"select", "selector":"issuing_agency.district_id", "value" : "Bắc Từ Liêm", "index" : 8},
+					{"type":"select", "selector":"issuing_agency.ward_id", "value":"Minh Khai", "index" : 9}
+				],
+				"assert":{
+					"type":"contain",
+					"data":"Tạo mới thành công",
+					"check":"1"
+				}
+				}			
+			]
+		
+		}
+		]
+	},
+	{
+		"email": "",
+		"password" : "",
+		"urls" :[]
+	}]
+}
+

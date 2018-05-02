@@ -1,0 +1,39 @@
+{
+	"users": [
+	{
+		"email": "quanly_1@gmail.com",
+		"password": "12345678",
+		"urls": [{
+			"path": "/main/admin/administrators/issuing_agency",
+			"modal": "showDeleteIssuingAgencyModal(issuing_agency)",
+			"bingding_index": 11,
+			"testcases": [
+			{
+				"casename": "Delete_success_005",
+				"pos": "1",
+				"assert": {
+					"type": "contain",
+					"data": "Không thể xóa do đơn vị này hiện có người dùng hoặc bệnh nhân",
+					"index":2,
+					"check":0	
+				}
+			},
+			{
+				"casename": "Delete_success_006",
+				"pos": "3",
+				"assert": {
+					"type": "contain",
+					"data": "21510",
+					"index":2,
+					"check":1	
+				}
+			}
+			]
+		}]
+	},
+	{
+		"email": "",
+		"password": "",
+		"urls": []
+	}]
+}

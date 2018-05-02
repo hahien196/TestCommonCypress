@@ -1,0 +1,154 @@
+{
+	"users":[
+	{
+		"email": "quanly_1@gmail.com",
+		"password" : "12345678",
+		"urls" :[
+		{
+			"path" : "/main/admin/administrators",
+			"modal":"showCreateAdminModal()",
+			"pos":"last",
+			"inputs": [
+				{"type":"text", "selector":"user.first_name", "value":"Nguyễn", "index" : 1},
+				{"type":"text", "selector":"user.last_name", "value":"Nam", "index" : 1},
+				{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 5},
+				{"type":"select", "selector":"user.issuing_agency_id", "value":"Cơ sở điều trị MMT Đồng Hỷ", "index" : 4}
+				
+			],
+			
+			"testcases":[
+			{
+				"casename":"Add_fail_001",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"truongcoso@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"a@123456"}
+				],
+				"assert":{
+					"type":"contain","text":"Email của bạn đã tồn tại",
+					"check":"email"}
+			},
+			{
+				"casename":"Add_fail_002",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"f1@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abc@123"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu dài ít nhất 8 kí tự",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_003",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"f1@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abc@abcd"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_004",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"f1@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"@@123456"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_005",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"f1@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abcd1234"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			}
+				
+			]
+		},
+		{
+			"path" : "/main/admin/admin_provinces",
+			"modal":"showCreateAdminModal()",
+			"pos":"last",
+			"inputs" : [
+				{"type":"text", "selector":"user.first_name", "value" : "Nguyễn", "index" : 1},
+				{"type":"text", "selector":"user.last_name", "value" : "Nam", "index" : 1},
+				{"type":"select", "selector":"user.province_id", "value" : "Thái Nguyên", "index" : 4},
+				{"type":"text", "selector":"user.unit_name" , "value": "Đơn vị 1", "index" : 5}
+			],
+			"testcases":[
+			{
+				"casename":"Add_fail_006",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"abc@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"a@123456"}
+				],
+				"assert":{
+					"type":"contain","text":"Email của bạn đã tồn tại",
+					"check":"email"}
+			},
+			
+			{
+				"casename":"Add_fail_007",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"a@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abc@123"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu dài ít nhất 8 kí tự",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_008",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"a@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abc@abcd"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_009",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"a@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"@@123456"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			},
+			{
+				"casename":"Add_fail_010",
+				"datas":[
+					{"type":"text", "selector":"user.email", "value":"a@gmail.com", "index" : 2},
+					{"type":"text", "selector":"user.password", "value":"abcd1234"}
+				],
+				"assert":{
+					"type":"contain","text":"Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+					"check":"password"
+				}
+			}
+				
+			]
+		}	
+		]
+	},
+	{
+		"email": "",
+		"password" : "",
+		"urls":[]
+	}
+	]
+}

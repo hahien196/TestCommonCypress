@@ -1,0 +1,170 @@
+{
+	"users":[
+	{
+		"email": "quanly_1@gmail.com",
+		"password" : "12345678",
+		"urls" :[
+		{
+			"path" : "/main/admin/administrators",
+			"modal":"showUpdateAdminModal(administrator.id)",
+			"pos":"1",
+      "testcases": [
+        {
+          "casename": "Update_fail_001",
+          "datas": {
+            "type": "text",
+            "selector": "user.email",
+            "value": "truongcoso_1@gmail.com",
+            "index": 2
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Email của bạn đã tồn tại",
+            "check": "email"
+
+          }
+        },
+        {
+          "casename": "Update_fail_002",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abc@123",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu dài ít nhất 8 kí tự",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_003",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abc@abcd",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_004",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abcd1234",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_005",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "123@1234",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        }
+      ]
+				
+		},
+		{
+			"path" : "/main/admin/admin_provinces",
+			"modal":"showUpdateAdminModal(admin_province.id)",
+			"pos":"1",
+      "testcases": [
+        {
+          "casename": "Update_fail_006",
+          "datas": {
+            "type": "text",
+            "selector": "user.email",
+            "value": "a0dd@gmail.com",
+            "index": 2
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Email của bạn đã tồn tại",
+            "check": "email"
+          }
+        },
+        {
+          "casename": "Update_fail_007",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abc@123",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu dài ít nhất 8 kí tự",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_008",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abc@abcd",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_009",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "abcd1234",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        },
+        {
+          "casename": "Update_fail_010",
+          "datas": {
+            "type": "text",
+            "selector": "user.password",
+            "value": "123@1234",
+            "index": ""
+          },
+          "assert": {
+            "type": "contain",
+            "text": "Mật khẩu cần có chữ cái, chữ số, các ký tự đặc biệt",
+            "check": "password"
+          }
+        }
+      ]	
+		}	
+		]
+	},
+	{
+		"email": "",
+		"password" : "",
+		"urls" :[]
+	}]
+}

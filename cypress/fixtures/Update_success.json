@@ -1,0 +1,144 @@
+{
+	"users":[
+	{
+		"email":"quanly_1@gmail.com",
+		"password":"12345678",
+		"urls":[
+		{
+			"path":"/main/admin/administrators",
+			"modal":"showUpdateAdminModal(administrator.id)",
+			"testcases": [
+			{
+				"casename":"Update_success_001",
+				"pos":"1",
+				"inputs":[
+					{"type":"text", "selector":"user.first_name", "value":"Tô", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value":"Lý", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 6},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"CSĐT Viettel", "index" : 5},
+					{"type":"select", "selector":"user.is_active", "value":"Hoạt động", "index" : 8}
+				],
+				"assert":{
+					"type":"contain","data":"Cập nhật thông tin thành công",
+					"check":"0"
+				}
+			},
+			{
+				"casename":"Update_success_002",
+				"pos":"1",
+				"inputs":"",
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"0"
+				}
+			},
+			{
+				"casename":"Update_success_003",
+				"pos":"1",
+				"inputs": [
+					{"type":"text", "selector":"user.first_name", "value":"Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name", "value":"Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id", "value":"Thái Nguyên", "index" : 6},
+					{"type":"select", "selector":"user.issuing_agency_id", "value":"CSĐT Viettel", "index" : 5},
+					{"type":"select", "selector":"user.is_active", "value":"Hoạt động", "index" : 8}
+				],
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"1"
+				}
+			}
+			]
+		},
+		{
+			"path":"/main/admin/admin_provinces",
+			"modal":"showUpdateAdminModal(admin_province.id)",
+			"testcases": [
+			{	
+				"casename":"Update_success_004",
+				"pos":"1",
+				"inputs" : [
+					{"type":"text", "selector":"user.first_name","value" : "Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name","value" : "Nam", "index" : 2},
+					{"type":"select", "selector":"user.province_id","value" : "Thái Nguyên", "index" : 5},
+					{"type":"text", "selector":"user.unit_name","value" : "Đơn vị 1", "index" : 6},
+					{"type":"select", "selector":"user.is_active","value" : "Hoạt động","index" : 7}
+				],
+				"assert":{
+					"type":"contain","data":"Cập nhật thông tin thành công",
+					"check":"0"
+				}
+			},
+			{
+				"casename":"Update_success_005",
+				"pos":"1",
+				"inputs" : "",
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"0"
+				}
+			},
+			{	
+				"casename":"Update_success_006",
+				"pos":"1",
+				"inputs" : [
+					{"type":"text", "selector":"user.first_name","value" : "Nguyễn", "index" : 2},
+					{"type":"text", "selector":"user.last_name","value" : "Quân", "index" : 2},
+					{"type":"select", "selector":"user.province_id","value" : "Thái Nguyên", "index" : 5},
+					{"type":"text", "selector":"user.unit_name","value" : "Đơn vị 2", "index" : 6},
+					{"type":"select", "selector":"user.is_active","value" : "Hoạt động", "index" : 7}
+				],
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"1"
+				}
+			}
+			]
+		},
+		{
+			"path":"/main/admin/administrators/issuing_agency",
+			"modal":"showEditIssuingAgencyModal(issuing_agency.id)",
+			"testcases": [
+			{
+				"casename":"Update_success_007",
+				"pos":"1",
+				"inputs" : [
+					{"type":"select", "selector":"edit_issuing_agency.province_id","value" : "Hà Nội", "index" : 7},
+					{"type":"select", "selector":"edit_issuing_agency.district_id","value" : "Bắc Từ Liêm", "index" : 8},
+					{"type":"select", "selector":"edit_issuing_agency.ward_id","value":"Minh Khai", "index" : 9}
+				],
+				"assert":{
+					"type":"contain","data":"Cập nhật thành công",
+					"check":"0"
+				}
+			},
+			{
+				"casename":"Update_success_008",
+				"pos":"1",
+				"inputs" : "",
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"0"
+				}
+			},
+			{
+				"casename":"Update_success_009",
+				"pos":"1",
+				"inputs" : [
+					{"type":"select", "selector":"edit_issuing_agency.province_id","value" : "Hà Nội", "index" : 7},
+					{"type":"select", "selector":"edit_issuing_agency.district_id","value" : "Bắc Từ Liêm", "index" : 8},
+					{"type":"select", "selector":"edit_issuing_agency.ward_id","value":"Minh Khai", "index" : 9}
+				],
+				"assert":{
+					"type":"contain","data":"input.value",
+					"check":"1"
+				}
+			}]
+		}]
+	},
+	{
+		"email":"",
+		"password":"",
+		"urls":[]
+		
+	}]
+}
